@@ -23,7 +23,315 @@
                 </ul>
             </nav>
             <button class="menu-toggle" aria-label="Abrir Menu">&#9776;</button>
-        </div>
+        </div>/* Váriaveis de Cores */
+:root {
+    --primary-color: #007bff; /* Azul vibrante (pode ser trocado por um verde escuro/terra) */
+    --secondary-color: #28a745; /* Verde Natureza */
+    --text-color: #343a40;
+    --background-light: #f8f9fa;
+    --white: #ffffff;
+}
+
+/* Reset básico e tipografia */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Cabeçalho e Navegação --- */
+header {
+    background: var(--white);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+header h1 {
+    font-size: 1.8em;
+    color: var(--secondary-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 10px 15px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+.menu-toggle {
+    display: none; /* Esconde o botão em telas grandes */
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* --- Seções Comuns --- */
+.section-padding {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.bg-light {
+    background-color: var(--background-light);
+}
+
+h2, h3 {
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+h3 {
+    font-size: 2em;
+}
+
+.subtitle {
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+/* --- Botões --- */
+.btn-cta {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+    border: none; /* Para o botão do formulário */
+    cursor: pointer;
+}
+
+.btn-cta:hover {
+    background-color: var(--secondary-color);
+}
+
+/* --- Seção Principal (Hero) --- */
+.hero {
+    background: url('img/hero_arapoti.jpg') no-repeat center center/cover; /* Imagem de fundo deve ser adicionada */
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    text-align: center;
+    position: relative;
+    padding: 100px 20px;
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.hero h2 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero p {
+    font-size: 1.2em;
+}
+
+/* --- Grid de Atrações (Cartões) --- */
+.grid-atracoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card-atracao {
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s;
+}
+
+.card-atracao:hover {
+    transform: translateY(-5px);
+}
+
+.card-atracao img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-atracao h4 {
+    color: var(--primary-color);
+    padding: 15px 15px 5px;
+    margin-bottom: 0;
+}
+
+.card-atracao p {
+    padding: 0 15px 15px;
+    font-size: 0.95em;
+}
+
+/* --- Seção Aventura (Lista de recursos) --- */
+.features ul {
+    list-style: none;
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+.features li {
+    background: var(--white);
+    padding: 15px;
+    margin: 10px 0;
+    border-left: 5px solid var(--secondary-color);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* --- Grid de Cultura/História --- */
+.grid-cultura {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.item-cultura {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.item-cultura h4 {
+    color: var(--primary-color);
+}
+
+/* --- Rodapé (Footer) e Formulário --- */
+footer {
+    background-color: var(--text-color);
+    color: var(--white);
+    padding: 40px 0 10px;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-info, .footer-form {
+    flex: 1;
+    min-width: 300px;
+    margin-bottom: 30px;
+}
+
+.footer-info h4, .footer-form h4 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.footer-form input[type="text"],
+.footer-form input[type="email"],
+.footer-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.footer-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.copy {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.8em;
+}
+
+/* --- Responsividade (Media Queries) --- */
+@media (max-width: 768px) {
+    /* Ajuste para o menu de navegação */
+    nav {
+        /* Esconde o menu por padrão no mobile */
+        display: none;
+        position: absolute;
+        top: 60px; /* Abaixo do header */
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        box-shadow: 0 4px 4px rgba(0,0,0,0.1);
+    }
+    
+    nav.active {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 15px 20px;
+        border-bottom: 1px solid var(--background-light);
+    }
+
+    .menu-toggle {
+        display: block; /* Mostra o botão no mobile */
+    }
+    
+    .hero h2 {
+        font-size: 2em;
+    }
+
+    .grid-atracoes {
+        grid-template-columns: 1fr; /* Coluna única no mobile */
+    }
+}
     </header>
 
     <main>
@@ -40,7 +348,7 @@
             <h3>🏞️ Belezas Naturais Imperdíveis</h3>
             <div class="grid-atracoes">
                 <div class="card-atracao">
-                    <img src="img/cachoeira_tigrinho.jpg" alt="Cachoeira do Tigrinho">
+                    <img src="img/cachoeira_tigrinho.jpg" alt="https://www.viagensecaminhos.com/wp-content/uploads/2022/12/arapoti-cachoeira-tigrinho.jpg">
                     <h4>Cachoeira do Tigrinho</h4>
                     <p>Duas quedas d'água majestosas e poço para banho refrescante, ideal para começar sua aventura.</p>
                 </div>
